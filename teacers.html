@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Teachers</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f5;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1800ec;
+      margin-bottom: 30px;
+    }
+
+    .search-container {
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative; /* For positioning the icon */
+    }
+
+    .search-container input[type="text"] {
+      width: 50%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding-left: 40px; /* Space for the icon */
+    }
+
+    .search-container i {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      font-size: 20px;
+      color: #333;
+    }
+
+    .subject-container {
+      background-color: #ffffff;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .subject-container h2 {
+      background-color: #3b2fac;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      text-transform: uppercase;
+    }
+
+    .teachers-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+
+    .teachers-list li {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+      font-size: 18px;
+    }
+
+    .teachers-list li:last-child {
+      border-bottom: none;
+    }
+
+    .subjects-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    .subject-container {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .no-results {
+      text-align: center;
+      font-size: 20px;
+      color: red;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Our Teachers</h1>
+
+<div class="search-container">
+  <i class="fas fa-search"></i> <!-- Search icon -->
+  <input type="text" id="teacherSearch" placeholder="Search teachers by name or subject..." onkeyup="searchTeachers()">
+</div>
+
+<div class="subjects-grid" id="teachersData">
+  <!-- Mathematics -->
+  <div class="subject-container">
+    <h2>Mathematics</h2>
+    <ul class="teachers-list">
+      <li>Abdul Nasir</li>
+      <li>Deepa</li>
+      <li>Divya</li>
+      <li>Krishna Kumar</li>
+      <li>Preethi Gopal</li>
+      <li>Sudeesh Kumar</li>
+      <li>Soorya</li>
+      <li>Usman Kavungal</li>
+      <li>Vrinda</li>
+    </ul>
+  </div>
+
+  <!-- Malayalam -->
+  <div class="subject-container">
+    <h2>Malayalam</h2>
+    <ul class="teachers-list">
+      <li>Anil Kumar</li>
+      <li>Indumathi</li>
+      <li>Murukeshan</li>
+      <li>Sajitha</li>
+      <li>Sumu</li>
+    </ul>
+  </div>
+
+  <!-- Hindi -->
+  <div class="subject-container">
+    <h2>Hindi</h2>
+    <ul class="teachers-list">
+      <li>Jaseera</li>
+      <li>Muhammed Ali</li>
+      <li>Prasheena</li>
+      <li>Sameera</li>
+      <li>Shareef</li>
+      <li>Sunoopa</li>
+    </ul>
+  </div>
+
+  <!-- Urdu -->
+  <div class="subject-container">
+    <h2>Urdu</h2>
+    <ul class="teachers-list">
+      <li>Hamsa</li>
+      <li>Jashir</li>
+      <li>Shamsudheen</li>
+    </ul>
+  </div>
+
+  <!-- Arabic -->
+  <div class="subject-container">
+    <h2>Arabic</h2>
+    <ul class="teachers-list">
+      <li>Amjath</li>
+      <li>Muneer</li>
+      <li>Rabeehusman</li>
+      <li>Shaheer</li>
+    </ul>
+  </div>
+
+  <!-- Sanskrit -->
+  <div class="subject-container">
+    <h2>Sanskrit</h2>
+    <ul class="teachers-list">
+      <li>Prathibha</li>
+    </ul>
+  </div>
+
+  <!-- Social Science -->
+  <div class="subject-container">
+    <h2>Social Science</h2>
+    <ul class="teachers-list">
+      <li>Anil Kumar</li>
+      <li>Beena</li>
+      <li>Biju</li>
+      <li>Lisha Kuryan</li>
+      <li>Manoj Kumar</li>
+      <li>Minimol</li>
+      <li>Praseetha</li>
+      <li>Sandeep</li>
+      <li>Sathi</li>
+    </ul>
+  </div>
+
+  <!-- English -->
+  <div class="subject-container">
+    <h2>English</h2>
+    <ul class="teachers-list">
+      <li>Bhavana</li>
+      <li>Bindu</li>
+      <li>Manoj</li>
+      <li>Muneer</li>
+      <li>Ranjini</li>
+      <li>Ramya</li>
+      <li>Shakeena</li>
+      <li>Sheena</li>
+      <li>Soona</li>
+      <li>Usha</li>
+    </ul>
+  </div>
+
+  <!-- Chemistry -->
+  <div class="subject-container">
+    <h2>Chemistry</h2>
+    <ul class="teachers-list">
+      <li>Beena</li>
+      <li>Rahmathulla</li>
+      <li>Raghi</li>
+      <li>Shreelatha</li>
+    </ul>
+  </div>
+
+  <!-- Physics -->
+  <div class="subject-container">
+    <h2>Physics</h2>
+    <ul class="teachers-list">
+      <li>Anju</li>
+      <li>Sreeja</li>
+      <li>Smitha Abraham</li>
+      <li>Suhaiba</li>
+    </ul>
+  </div>
+
+  <!-- Biology -->
+  <div class="subject-container">
+    <h2>Biology</h2>
+    <ul class="teachers-list">
+      <li>Jyothish Kumar</li>
+      <li>Leena Kuriakose</li>
+      <li>Neema</li>
+      <li>Ramya</li>
+    </ul>
+  </div>
+
+  <!-- Physical Training -->
+  <div class="subject-container">
+    <h2>Physical Training</h2>
+    <ul class="teachers-list">
+      <li>Lenin Das</li>
+    </ul>
+  </div>
+
+  <!-- Art Education -->
+  <div class="subject-container">
+    <h2>Art Education</h2>
+    <ul class="teachers-list">
+      <li>Swapnakala</li>
+    </ul>
+  </div>
+
+  <!-- Work Education -->
+  <div class="subject-container">
+    <h2>Work Education</h2>
+    <ul class="teachers-list">
+      <li>Suja</li>
+    </ul>
+  </div>
+</div>
+
+<p class="no-results" id="noResults">No matching teachers found.</p>
+
+<script>
+  function searchTeachers() {
+    let input = document.getElementById('teacherSearch').value.toLowerCase();
+    let teachersData = document.getElementById('teachersData');
+    let noResults = document.getElementById('noResults');
+    let containers = teachersData.getElementsByClassName('subject-container');
+    let found = false;
+
+    for (let container of containers) {
+      let teacherNames = container.getElementsByTagName('li');
+      let match = false;
+      
+      for (let name of teacherNames) {
+        let teacherText = name.textContent || name.innerText;
+        if (teacherText.toLowerCase().indexOf(input) > -1) {
+          name.style.display = '';
+          match = true;
+        } else {
+          name.style.display = 'none';
+        }
+      }
+
+      // Display the container if there's a match in this subject
+      if (match) {
+        container.style.display = '';
+        found = true;
+      } else {
+        container.style.display = 'none';
+      }
+    }
+
+    // Show or hide the no-results message
+    noResults.style.display = found ? 'none' : '';
+  }
+</script>
+
+</body>
+</html>

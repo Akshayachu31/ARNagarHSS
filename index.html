@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A R NAGR HSS WEB</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #dbdadd;
+    }
+    header {
+      background-color: #ffffff;
+      padding: 20px;
+      color: rgb(68, 9, 230);
+      text-align: center;
+      display: flex;
+      flex-direction: column; /* Aligning the text above the name */
+      justify-content: center;
+      align-items: center;
+    }
+    header img {
+      height: 100px;
+    }
+    /* Custom styles for the text above the main name */
+    header .above-name {
+      font-size: 18px;
+      color: #ff5733; /* Change this color as needed */
+      font-family: 'Georgia', serif; /* Change this font as needed */
+      margin-bottom: 5px; /* Space between the two headings */
+    }
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      background-color: #003366;
+    }
+    .navbar a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      text-align: center;
+    }
+    .navbar a:hover {
+      background-color: #00509e;
+    }
+
+    /* Sliding name section (ticker) */
+    .ticker-container {
+      background-color: white;
+      overflow: hidden;
+      width: 100%;
+      margin: 20px 0;
+      border: 2px solid rgb(77, 20, 182);
+    }
+    .ticker {
+      display: inline-block;
+      white-space: nowrap;
+      animation: slide 12s linear infinite;
+    }
+    .ticker p {
+      display: inline;
+      font-size: 20px;
+      color: rgb(199, 31, 31);
+      font-weight:bold;
+      padding: 10px;
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .details, .achievements {
+      padding: 20px;
+      background-color: rgb(236, 233, 233);
+      margin: 20px 0;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .details h2, .achievements h2 {
+      margin-bottom: 15px;
+      color: #003366;
+    }
+    .details p, .achievements p {
+      line-height: 1.6;
+    }
+
+    /* Blinking images section */
+    .blinking-images {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .blinking-images img {
+      width: 150px;
+      height: auto;
+      margin: 0 10px;
+      border: 2px solid black;
+      opacity: 0;
+      animation: blink 3s infinite;
+    }
+    .blinking-images img:nth-child(1) {
+      animation-delay: 0s;
+    }
+    .blinking-images img:nth-child(2) {
+      animation-delay: 1s;
+    }
+    .blinking-images img:nth-child(3) {
+      animation-delay: 2s;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    .footer {
+      background-color: #003366;
+      color: rgb(68, 0, 255);
+      text-align: center;
+      padding: 10px;
+    }
+
+    /* Flexbox for name and image alignment */
+    .person {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .person img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin-left: 20px;
+      border-radius: 0; /* Makes the images square */
+    }
+    .person-info {
+      flex-grow: 1;
+    }
+    .person-info p {
+      font-size: 18px;
+      color: #003366;
+    }
+    /* Bold the names using CSS */
+    .person-info p strong {
+      font-weight: bold;
+      font-size: 20px; /* Increase font size if needed */
+    }
+
+    /* Three-line navigation bar (hamburger menu) */
+    .menu-btn {
+      display: none;
+      background-color: #003366;
+      color: rgb(50, 6, 247);
+      padding: 10px;
+      font-size: 20px;
+      border: none;
+    }
+    .menu-btn:hover {
+      cursor: pointer;
+    }
+    .navbar {
+      display: none;
+      flex-direction: column;
+    }
+    .navbar.active {
+      display: flex;
+    }
+    @media (min-width: 600px) {
+      .menu-btn {
+        display: none;
+      }
+      .navbar {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="arn logo.png" alt="School Logo">
+  <!-- New text added above the main name -->
+  <h2 class="above-name">Welcome To Our</h2>
+  <h1>ABDU RAHIMAN HIGHER SECONDARY SCHOOL CHENDAPURAYA</h1>
+  <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+</header>
+
+<nav class="navbar">
+  <a href="index.html">Home</a>
+  <a href="About us.html">About Us</a>
+  <a href="location .html">Location</a>
+  <a href="teacers.html">Teachers</a>
+  <a href="#">PTA</a>
+</nav>
+
+<!-- Sliding name section -->
+<div class="ticker-container">
+  <div class="ticker">
+    <p>Welcome to Abdu Rahiman Higher Secondary School Chendapuraya | Established in 1924 | Empowering the Future!</p>
+  </div>
+</div>
+
+<!-- Blinking images section above About Our School -->
+<div class="blinking-images">
+  <img src="scool arn.jpg" alt="Image ">
+  <img src="runnerup arn.png" alt="Image ">
+  <img src="thug of war arn.jpg" alt="Image ">
+  <img src="pass arn.jpg" alt="Image ">
+  <img src="view arn.jpg" alt="Image ">
+</div>
+
+<div class="details">
+  <h2>About Our School</h2>
+  <p>A.R.NAGAR HSS CHENDAPURAYA was established in 1924 and it is managed by the Pvt. Aided. It is located in Rural area. It is located in VENGARA block of MALAPPURAM district of Kerala. The school consists of Grades from 1 to 12. The school is Co-educational and it doesn't have an attached pre-primary section. The school is Not Applicable in nature and is not using school building as a shift-school. Malayalam is the medium of instructions in this school. This school is approachable by all weather road. In this school academic session starts in April. The school has Private building. It has got 61 classrooms for instructional purposes. All the classrooms are in good condition. It has 2 other rooms for non-teaching activities. The school has a separate room for Head master/Teacher. The school has Pucca boundary wall. The school has have electric connection. The source of Drinking Water in the school is Tap Water and it is functional. The school has 16 boys toilet and it is functional. and 26 girls toilet and it is functional. The school has a playground. The school has a library and has 5000 books in its library. The school does not need ramp for disabled children to access classrooms. The school has 40 computers for teaching and learning purposes and all are functional. The school is having a computer aided learning lab. The school is Provided and Prepared in School Premises providing mid-day meal.</p>
+
+  <!-- Manager Details -->
+  <div class="person">
+    <div class="person-info">
+      <p><strong>Manager:</strong>Adv Usman Kurikkal OV</p>
+      <p><em>Committed to overseeing the growth and success of the school.</em></p>
+    </div>
+    <img src="manager.jpg" alt="Manager Photo">
+  </div>
+
+  <!-- Headmaster Details -->
+  <div class="person">
+    <div class="person-info">
+      <p><strong>Headmaster:</strong> Anil kumar</p>
+      <p><em>Leading the school with a vision for academic excellence.</em></p>
+    </div>
+    <img src="headmaster arn.png" alt="Headmaster Photo">
+  </div>
+
+  <!-- Principal Details -->
+  <div class="person">
+    <div class="person-info">
+      <p><strong>Principal:</strong> Surendran </p>
+      <p><em>Guiding students and staff toward achieving their best.</em></p>
+    </div>
+    <img src="principal.jpg" alt="Principal Photo">
+  </div>
+</div>
+
+<div class="achievements">
+  <h2>Our Achievements</h2>
+  <p>We are proud of our students and staff who have achieved remarkable milestones over the years.</p>
+  <img src="thug of war arn.jpg" alt="Achievement 1">
+  <img src="pass arn.jpg" alt="Achievement 2">
+  <img src="runnerup arn.png" alt="Achievement 3">
+</div>
+
+<footer class="footer">
+  <p>&copy; 2024 A R Nagar HSS. All rights reserved.</p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    var navbar = document.querySelector('.navbar');
+    navbar.classList.toggle('active');
+  }
+</script>
+
+</body>
+</html>
